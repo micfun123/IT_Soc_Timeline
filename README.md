@@ -57,9 +57,10 @@ git push origin add-2025-2026
 
 Visit your fork on GitHub, and click Compare & pull request. Add a short description and submit!
 
-```
+
 
 ### ✅ Supported Link Platforms:
+
 Supported Platforms for Member Links
 
 The website supports the following platforms for member links:​
