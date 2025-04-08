@@ -1,0 +1,87 @@
+{
+    "year": "2016-2017",
+    "current": false,
+    "members": [
+        {
+            "name": "Talhaa",
+            "role": "President",
+            "bio": "",
+            "links": [ 
+                
+            ],
+            "type": "president"
+        },{
+            "name": "Aleena",
+            "role": "Vice - President",
+            "bio": "",
+            "links": [ 
+                
+            ],
+            "type": "president"
+        },
+        {
+            "name": "Ryan Thickett",
+            "role": "VP Media",
+            "bio": "Bio not provided",
+            "links": [
+                {"platform": "linkedin", "username": "ryan-thickett-80474754"}
+            ],
+            "type": "president"
+        },
+        {
+            "name": "David",
+            "role": "VP Technical",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "president"
+        },
+        {
+            "name": "Sam",
+            "role": "VP Social",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "president"
+        },{
+            "name": "Josh",
+            "role": "Media Secretary",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Tom",
+            "role": "Web Dev",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Charley",
+            "role": "Web Dev",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Valerie",
+            "role": "Treasurer",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "executive"
+        }
+
+             
+    ]
+}

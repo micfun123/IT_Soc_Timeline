@@ -3,14 +3,32 @@
     "current": false,
     "members": [
         {
-            "name": "Tom Hewett",
+            "name": "Yasmin",
             "role": "President",
+            "bio": "",
+            "links": [ 
+                
+            ],
+            "type": "president"
+        },{
+            "name": "Tom Hewett",
+            "role": "Vice - President",
             "bio": "Software Engineering, He/Him,",
             "links": [ 
                 {"platform": "linkedin", "username": "om-hewett-7580a9267"},
                 {"platform": "github", "username": "CalmArms"}
             ],
             "type": "president"
-        }        
+        },
+        {
+            "name": "Ryan Thickett",
+            "role": "Socal Secretary",
+            "bio": "Bio not provided",
+            "links": [
+                {"platform": "linkedin", "username": "ryan-thickett-80474754"}
+            ],
+            "type": "executive"
+        }
+             
     ]
 }
