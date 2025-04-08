@@ -1,0 +1,64 @@
+{
+    "year": "2024-2025",
+    "current": true,
+    "members": [
+        {
+            "name": "Brendan Skeet",
+            "role": "President",
+            "bio": "Computer Science Masters, He/Him, Hates Computers",
+            "links": [],
+            "type": "president"
+        },
+        {
+            "name": "Anna Kennewell",
+            "role": "Treasurer",
+            "bio": "Computer Science | 2nd Year | She/Her Lover of hackathons, competitive coding and spreadsheets",
+            "links": [
+                {"platform": "linkedin", "username": "anna-k-431206333"},
+                {"platform": "github", "username": "AWell35"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Keita Vebere",
+            "role": "Welfare Officer",
+            "bio": "Software Engineer | 2nd Year | She/Her | Tea addicted dork that likes hamsters ",
+            "links": [
+                {"platform": "linkedin", "username": "keita-vebere-5709822a3"},
+                {"platform": "github", "username": "KVebere"}
+            ],
+            "type": "welfare"
+        },
+        {
+            "name": "Sam Blewitt",
+            "role": "Social Media Secretary ",
+            "bio": "Computer Science | 2nd Year | He/Him | ⚠ Will not stop talking about planes ⚠",
+            "links": [
+                {"platform": "linkedin", "username": "sam-blewitt"},
+                {"platform": "github", "username": "wotanut"},
+                {"platform": "website", "username": "www.sambot.dev"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Michael Parker",
+            "role": "Secretary",
+            "bio": "Computer Science | 1st Year | He/Him | 6'4 and Single",
+            "links": [
+                {"platform": "linkedin", "username": "michaelrbparker"},
+                {"platform": "website", "username": "www.michaelrbparker.com/"},
+                {"platform": "email", "username": "michaelrbparker@protonmail.com"},
+                {"platform": "github", "username": "micfun123"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Mohammed Elfayez",
+            "role": "Events Secretary",
+            "bio": "",
+            "links": [],
+            "type": "executive"
+        }
+        
+    ]
+}

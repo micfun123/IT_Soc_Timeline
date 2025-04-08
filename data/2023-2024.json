@@ -1,0 +1,45 @@
+{
+    "year": "2023-2024",
+    "current": false,
+    "members": [
+        {
+            "name": "Megan Knaresborough",
+            "role": "President",
+            "bio": "",
+            "links": [],
+            "type": "president"
+        },
+        {
+            "name": "Brendan Skeet",
+            "role": "Secretary",
+            "bio": "Computer Science Masters, He/Him, Hates Computers",
+            "links": [],
+            "type": "executive"
+        },
+        {
+            "name": "Nik",
+            "role": "Treasurer",
+            "bio": "",
+            "links": [
+                {"platform": "linkedin", "username": "username"},
+                {"platform": "github", "username": "username"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Joe tichelley",
+            "role": "Social Media Secretary ",
+            "bio": "Computer Science",
+            "links": [],
+            "type": "executive"
+        },
+        {
+            "name": "Iris",
+            "role": "Kit Secretary",
+            "bio": "",
+            "links": [],
+            "type": "executive"
+        }
+        
+    ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Society Committee Timeline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IT Society Committee Timeline</h1>
+        
+        <div class="role-legend">
+            <div class="legend-item">
+                <div class="color-box executive"></div>
+                <span>Executive</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box welfare"></div>
+                <span>Welfare</span>
+            </div>
+            <!-- <div class="legend-item">
+                <div class="color-box events"></div>
+                <span>Events</span>
+            </div> -->
+            <div class="legend-item">
+                <div class="color-box president"></div>
+                <span>President</span>
+            </div>
+            <!-- <div class="legend-item">
+                <div class="color-box other"></div>
+                <span>Other</span>
+            </div> -->
+        </div>
+        
+        <div class="timeline">
+            <!-- Year rows will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- The Modal -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalName"></h2>
+                <h3 id="modalRole"></h3>
+            </div>
+            <div class="modal-body">
+                <img id="modalImg" class="profile-img" src="/api/placeholder/80/80" alt="Profile photo">
+                <p id="modalBio"></p>
+                <div class="links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

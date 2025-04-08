@@ -1,0 +1,297 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f8fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.year-row {
+    display: flex;
+    position: relative;
+}
+
+.year-header {
+    min-width: 120px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    height: fit-content;
+    align-self: center;
+}
+
+.committee-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.committee-box {
+    min-width: 160px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.committee-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.committee-box.executive {
+    background-color: #2c3e50;
+}
+
+.committee-box.welfare {
+    background-color: #e74c3c;
+}
+
+.committee-box.events {
+    background-color: #27ae60;
+}
+
+.committee-box.president {
+    background-color: #f39c12;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.connector {
+    position: absolute;
+    background-color: #95a5a6;
+    z-index: -1;
+}
+
+.vertical-connector {
+    width: 2px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-60px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal-header {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-body {
+    padding: 20px 0;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+    float: left;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #3498db;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #f1f9fe;
+    transition: all 0.2s ease;
+}
+
+.links a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Control panel */
+.control-panel {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.role-legend {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.color-box.executive {
+    background-color: #2c3e50;
+}
+
+.color-box.welfare {
+    background-color: #e74c3c;
+}
+
+.color-box.events {
+    background-color: #27ae60;
+}
+
+.color-box.president {
+    background-color: #f39c12;
+}
+
+.color-box.other {
+    background-color: #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .year-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .year-header {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .committee-row {
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    .committee-box {
+        min-width: 140px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 30% auto;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .add-controls {
+        flex-direction: column;
+    }
+}
