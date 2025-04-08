@@ -5,8 +5,11 @@
         {
             "name": "Tom Hewett",
             "role": "President",
-            "bio": "Computer Science Masters, He/Him, Hates Computers",
-            "links": [],
+            "bio": "Software Engineering, He/Him,",
+            "links": [ 
+                {"platform": "linkedin", "username": "om-hewett-7580a9267"},
+                {"platform": "github", "username": "CalmArms"}
+            ],
             "type": "president"
         }        
     ]
