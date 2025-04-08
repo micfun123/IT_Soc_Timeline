@@ -67,19 +67,28 @@ The website supports the following platforms for member links:​
 
 LinkedIn: `https://linkedin.com/in/{username}​`
     Example: `{"platform": "linkedin", "username": "john-doe"}​`
+
 GitHub: `https://github.com/{username}​`
+
     Example: `{"platform": "github", "username": "johndoe"}​`
+
 Website: https://{username}​`
     Example: `{"platform": "website", "username": "www.johndoe.com"}​`
+
 Twitter: `https://twitter.com/{username}​`
     Example: `{"platform": "twitter", "username": "johndoe"}​`
+
 Instagram: `https://instagram.com/{username}​`
     Example: `{"platform": "instagram", "username": "johndoe"}​`
+    
 Mastodon: `https://mastodon.social/@{username}​`
     Example: `{"platform": "mastodon", "username": "johndoe"}​`
+
 Email: `mailto:{username}​`
     Example: `{"platform": "email", "username": "johndoe@example.com"}​`
+
 YouTube: `https://youtube.com/{username}​`
     Example: `{"platform": "youtube", "username": "johndoe"}​`
-If you don't have any links, use an empty list: "links": []
+
+If you don't have any links, use an empty list: `"links": []`
 
