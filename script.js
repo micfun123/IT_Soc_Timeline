@@ -1,23 +1,83 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Years to load
-    const years = ['2024-2025', '2023-2024', '2022-2023'];
-    
-    // Load each year's data
-    years.forEach(year => {
-        fetch(`data/${year}.json`)
-            .then(response => response.json())
-            .then(data => {
-                createYearRow(data);
-            })
-            .catch(error => {
-                console.error(`Error loading ${year} data:`, error);
-            });
-    });
+document.addEventListener('DOMContentLoaded', async function() {
+    const timeline = document.querySelector('.timeline');
+    timeline.innerHTML = '<div class="loading">Loading committee data...</div>';
 
-    // Setup modal functionality
+    try {
+        // 1. Auto-discover available years by testing likely filenames
+        const availableYears = await discoverYearFiles();
+        
+        // 2. Sort years descending (newest first)
+        const sortedYears = availableYears.sort((a, b) => {
+            const yearA = parseInt(a.split('-')[0]);
+            const yearB = parseInt(b.split('-')[0]);
+            return yearB - yearA; // Newest first
+        });
+
+        // 3. Load all year data in parallel (faster than sequential)
+        const yearData = await Promise.all( 
+            sortedYears.map(year => 
+                loadYearData(year).catch(e => {
+                    console.warn(`Skipping ${year}.json (failed to load)`);
+                    return null;
+                })
+            )
+        );
+
+        // 4. Display only successfully loaded years
+        yearData.filter(data => data).forEach(data => createYearRow(data));
+        
+        timeline.querySelector('.loading')?.remove();
+    } catch (error) {
+        console.error('Error:', error);
+        timeline.innerHTML = `
+            <div class="error">
+                Error loading data. 
+                <button onclick="location.reload()">Retry</button>
+            </div>
+        `;
+    }
+
     setupModal();
 });
 
+/**
+ * Tries to find all available year files by testing likely patterns
+ */
+async function discoverYearFiles() {
+    const currentYear = new Date().getFullYear();
+    const testYears = [];
+    
+    // Generate likely academic year patterns (e.g., 2023-2024)
+    for (let i = currentYear + 1; i >= currentYear - 10; i--) {
+        testYears.push(`${i-1}-${i}`); // Academic years
+    }
+    
+    // Test which files actually exist
+    const existenceChecks = await Promise.all(
+        testYears.map(year => 
+            fetch(`data/${year}.json`)
+                .then(r => r.ok ? year : null)
+                .catch(() => null)
+        )
+    );
+    
+    return existenceChecks.filter(year => year !== null);
+}
+
+/**
+ * Loads data for a specific year
+ */
+async function loadYearData(year) {
+    const response = await fetch(`data/${year}.json`);
+    if (!response.ok) throw new Error(`${year}.json not found`);
+    const data = await response.json();
+    data.year = year; // Ensure year is set
+    return data;
+}
+
+/**
+ * Creates a timeline row for a year's committee
+ */
 function createYearRow(yearData) {
     const timeline = document.querySelector('.timeline');
     
@@ -31,32 +91,29 @@ function createYearRow(yearData) {
     const committeeRow = document.createElement('div');
     committeeRow.className = 'committee-row';
     
-    yearData.members.forEach(member => {
+    // Sort members by role importance (optional)
+    const roleOrder = ['President', 'Vice President', 'Secretary', 'Treasurer'];
+    const sortedMembers = [...yearData.members].sort((a, b) => {
+        const aIndex = roleOrder.indexOf(a.role);
+        const bIndex = roleOrder.indexOf(b.role);
+        return (aIndex > -1 ? aIndex : Infinity) - (bIndex > -1 ? bIndex : Infinity);
+    });
+    
+    sortedMembers.forEach(member => {
         const memberBox = document.createElement('div');
         memberBox.className = `committee-box ${member.type}`;
+        memberBox.innerHTML = `
+            <div class="name">${member.name}</div>
+            <div class="role">${member.role}</div>
+        `;
         
-        // Set data attributes
-        memberBox.setAttribute('data-name', member.name);
-        memberBox.setAttribute('data-role', member.role);
-        memberBox.setAttribute('data-bio', member.bio);
-        
-        // Format links as comma-separated string if they exist
-        if (member.links && member.links.length > 0) {
-            const linksStr = member.links.map(link => `${link.platform}:${link.username}`).join(', ');
-            memberBox.setAttribute('data-links', linksStr);
+        // Set data attributes for modal
+        memberBox.dataset.name = member.name;
+        memberBox.dataset.role = member.role;
+        memberBox.dataset.bio = member.bio || '';
+        if (member.links) {
+            memberBox.dataset.links = member.links.map(l => `${l.platform}:${l.username}`).join(', ');
         }
-        
-        // Create name and role elements
-        const nameElement = document.createElement('div');
-        nameElement.className = 'name';
-        nameElement.textContent = member.name;
-        
-        const roleElement = document.createElement('div');
-        roleElement.className = 'role';
-        roleElement.textContent = member.role;
-        
-        memberBox.appendChild(nameElement);
-        memberBox.appendChild(roleElement);
         
         committeeRow.appendChild(memberBox);
     });
@@ -66,91 +123,53 @@ function createYearRow(yearData) {
     timeline.appendChild(yearRow);
 }
 
+/**
+ * Sets up the member modal functionality
+ */
 function setupModal() {
     const modal = document.getElementById('memberModal');
-    const closeBtn = document.getElementsByClassName('close')[0];
-    const committeeBoxes = document.querySelectorAll('.committee-box');
+    const closeBtn = document.querySelector('.close');
     
-    // When the user clicks on a committee box, open the modal
-    document.addEventListener('click', function(event) {
-        const box = event.target.closest('.committee-box');
-        if (box) {
-            const name = box.getAttribute('data-name');
-            const role = box.getAttribute('data-role');
-            const bio = box.getAttribute('data-bio');
-            const links = box.getAttribute('data-links');
-            
-            document.getElementById('modalName').textContent = name;
-            document.getElementById('modalRole').textContent = role;
-            document.getElementById('modalBio').textContent = bio;
-            
-            // Generate links
-            const linksContainer = document.getElementById('modalLinks');
-            linksContainer.innerHTML = '';
-            
-            if (links) {
-                const linkArray = links.split(', ');
-                linkArray.forEach(link => {
-                    const [platform, username] = link.split(':');
-                    const linkElement = document.createElement('a');
-                    
-                    // Same link generation logic as before
-                    switch(platform) {
-                        case 'linkedin':
-                            linkElement.textContent = 'LinkedIn';
-                            linkElement.href = `https://linkedin.com/in/${username}`;
-                            break;
-                        case 'github':
-                            linkElement.textContent = 'GitHub';
-                            linkElement.href = `https://github.com/${username}`;
-                            break;
-                        case 'website':
-                            linkElement.textContent = 'Website';
-                            linkElement.href = `https://${username}`;
-                            break;
-                        case 'twitter':
-                            linkElement.textContent = 'Twitter';
-                            linkElement.href = `https://twitter.com/${username}`;
-                            break;
-                        case 'instagram':
-                            linkElement.textContent = 'Instagram';
-                            linkElement.href = `https://instagram.com/${username}`;
-                            break;
-                        case 'mastodon':
-                            linkElement.textContent = 'Mastodon';
-                            linkElement.href = `https://mastodon.social/@${username}`;
-                            break;
-                        case 'email':
-                            linkElement.textContent = 'Email';
-                            linkElement.href = `mailto:${username}`;
-                            break;
-                        case 'youtube':
-                            linkElement.textContent = 'YouTube';
-                            linkElement.href = `https://youtube.com/${username}`;
-                            break;
-                        default:
-                            linkElement.textContent = platform;
-                            linkElement.href = `https://${username}`;
-                    }
-                    
-                    linkElement.target = "_blank";
-                    linksContainer.appendChild(linkElement);
-                });
-            }
-            
-            modal.style.display = 'block';
+    // Handle clicks on committee members
+    document.addEventListener('click', (e) => {
+        const box = e.target.closest('.committee-box');
+        if (!box) return;
+        
+        // Update modal content
+        document.getElementById('modalName').textContent = box.dataset.name;
+        document.getElementById('modalRole').textContent = box.dataset.role;
+        document.getElementById('modalBio').textContent = box.dataset.bio;
+        
+        // Generate links
+        const linksContainer = document.getElementById('modalLinks');
+        linksContainer.innerHTML = '';
+        
+        if (box.dataset.links) {
+            box.dataset.links.split(', ').forEach(link => {
+                const [platform, username] = link.split(':');
+                const a = document.createElement('a');
+                a.textContent = platform;
+                a.target = '_blank';
+                a.className = 'modal-link';
+                
+                // Set appropriate URL based on platform
+                const platforms = {
+                    linkedin: `https://linkedin.com/in/${username}`,
+                    github: `https://github.com/${username}`,
+                    twitter: `https://twitter.com/${username}`,
+                    email: `mailto:${username}`,
+                    website: username.startsWith('http') ? username : `https://${username}`
+                };
+                
+                a.href = platforms[platform] || `https://${username}`;
+                linksContainer.appendChild(a);
+            });
         }
+        
+        modal.style.display = 'block';
     });
     
-    // Close the modal when the user clicks on the close button
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Close the modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+    // Close modal handlers
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => e.target === modal && (modal.style.display = 'none'));
 }
