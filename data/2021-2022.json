@@ -1,0 +1,20 @@
+{
+    "year": "2021-2022",
+    "current": false,
+    "members": [
+        {
+            "name": "Florence Hutchins",
+            "role": "President",
+            "bio": "She/Her",
+            "links": [],
+            "type": "president"
+        },
+        {
+            "name": "Susruth ",
+            "role": "Treasurer",
+            "bio": "",
+            "links": [],
+            "type": "executive"
+        }
+    ]
+}

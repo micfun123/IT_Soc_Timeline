@@ -1,0 +1,27 @@
+{
+    "year": "2022-2023",
+    "current": false,
+    "members": [
+        {
+            "name": "Jeet Chatterjee",
+            "role": "President",
+            "bio": "",
+            "links": [],
+            "type": "president"
+        },
+        {
+            "name": "Brendan Skeet",
+            "role": "Treasurer",
+            "bio": "Computer Science Masters, He/Him, Hates Computers",
+            "links": [],
+            "type": "executive"
+        },
+        {
+            "name": "Nik",
+            "role": "secretary",
+            "bio": "",
+            "links": [],
+            "type": "executive"
+        }
+    ]
+}

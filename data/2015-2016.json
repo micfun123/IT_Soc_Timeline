@@ -1,0 +1,13 @@
+{
+    "year": "2015-2016",
+    "current": false,
+    "members": [
+        {
+            "name": "Tom Hewett",
+            "role": "President",
+            "bio": "Computer Science Masters, He/Him, Hates Computers",
+            "links": [],
+            "type": "president"
+        }        
+    ]
+}
