@@ -15,6 +15,13 @@
             "bio": "",
             "links": [],
             "type": "executive"
+        },
+        {
+            "name": "Brendan Skeet",
+            "role": "Secretary",
+            "bio": "Computer Science Masters, He/Him, Hates Computers",
+            "links": [],
+            "type": "executive"
         }
     ]
 }
