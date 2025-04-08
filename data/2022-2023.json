@@ -5,8 +5,12 @@
         {
             "name": "Jeet Chatterjee",
             "role": "President",
-            "bio": "",
-            "links": [],
+            "bio": "Computer Science | Meng | He/Him ",
+            "links": [
+                {"platform": "website", "username": "www.jeetelongname.net"},
+                {"platform": "linkedin", "username": "jeet-chatterjee-1a0b4a1b2"},
+                {"platform": "github", "username": "jeetelongname"}
+            ],
             "type": "president"
         },
         {
