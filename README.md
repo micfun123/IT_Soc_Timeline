@@ -45,7 +45,7 @@ Use the following format:
     // add more members as needed
   ]
 }
-
+```
 5. Commit and Push
 ```
 git checkout -b add-2025-2026
