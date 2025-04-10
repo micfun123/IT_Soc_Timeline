@@ -72,7 +72,7 @@ GitHub: `https://github.com/{username}​`
 
     Example: `{"platform": "github", "username": "johndoe"}​`
 
-Website: https://{username}​`
+Website: `https://{username}​`
     Example: `{"platform": "website", "username": "www.johndoe.com"}​`
 
 Twitter: `https://twitter.com/{username}​`
