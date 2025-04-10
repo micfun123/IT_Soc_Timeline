@@ -1,0 +1,54 @@
+{
+    "year": "2019-2020",
+    "current": false,
+    "members": [
+        {
+            "name": "Ali",
+            "role": "President",
+            "bio": "",
+            "links": [ 
+                
+            ],
+            "type": "president"
+        },{
+            "name": "Allysia",
+            "role": "Allysia",
+            "bio": "",
+            "links": [ 
+                
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Alan",
+            "role": "Social Secretary",
+            "bio": "Bio not provided",
+            "links": [],
+            "type": "executive"
+        },
+        {
+            "name": "Ted",
+            "role": "Social Secretary",
+            "bio": "Bio not provided",
+            "links": [],
+            "type": "executive"
+        },
+        {
+            "name": "Oliver ",
+            "role": "welfare",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "welfare"
+        },{
+            "name": "Elliott ",
+            "role": "Vice President",
+            "bio": "Bio not provided",
+            "links": [
+                
+            ],
+            "type": "president"
+        }
+    ]
+}
