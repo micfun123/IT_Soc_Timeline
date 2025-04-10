@@ -33,7 +33,7 @@
             "role": "VP Technical",
             "bio": "Bio not provided",
             "links": [
-                
+                {"platform": "github", "username": "SageRalph"}
             ],
             "type": "president"
         },
