@@ -91,8 +91,8 @@ function createYearRow(yearData) {
     const committeeRow = document.createElement('div');
     committeeRow.className = 'committee-row';
     
-    // Sort members by role importance (optional)
-    const roleOrder = ['President', 'Vice President', 'Secretary', 'Treasurer'];
+    
+    const roleOrder = ['President', 'Vice President', 'Secretary', 'welfare', 'Treasurer'];
     const sortedMembers = [...yearData.members].sort((a, b) => {
         const aIndex = roleOrder.indexOf(a.role);
         const bIndex = roleOrder.indexOf(b.role);
