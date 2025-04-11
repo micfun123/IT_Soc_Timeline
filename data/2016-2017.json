@@ -64,16 +64,16 @@
             "type": "executive"
         },
         {
-            "name": "Charley",
+            "name": "Skye Micu",
             "role": "Web Dev",
             "bio": "Bio not provided",
             "links": [
-                
+                {"platform": "linkedin", "username": "skye-micu"}
             ],
             "type": "executive"
         },
         {
-            "name": "Valerie",
+            "name": "Valeria Zaharia",
             "role": "Treasurer",
             "bio": "Bio not provided",
             "links": [

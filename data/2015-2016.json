@@ -3,11 +3,11 @@
     "current": false,
     "members": [
         {
-            "name": "Yasmin",
+            "name": "Yasmeen Hazy",
             "role": "President",
             "bio": "",
             "links": [ 
-                
+                {"platform": "linkedin", "username": "yasmeen-hazy"}
             ],
             "type": "president"
         },{
