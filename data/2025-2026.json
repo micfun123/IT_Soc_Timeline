@@ -1,0 +1,49 @@
+{
+    "year": "2025-2026",
+    "current": true,
+    "members": [
+        {
+            "name": "Anna Rejlová",
+            "role": "Treasurer",
+            "bio": "Computer Science | 2nd Year | She/Him/They | Alive",
+            "links": [
+                {"platform": "linkedin", "username": "anirejlova"},
+                {"platform": "github", "username": "anirejlova"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Scarlett Larder",
+            "role": "Welfare Officer",
+            "bio": "Computer Science | 2nd Year | She/Her |  ",
+            "links": [
+                {"platform": "linkedin", "username": "alex-larder-066692258"},
+                {"platform": "github", "username": "Scarlett-Larder"}
+            ],
+            "type": "welfare"
+        },
+        {
+            "name": "Sam Blewitt",
+            "role": "Events Secretary ",
+            "bio": "Computer Science | 3rd Year | He/Him | ⚠ Will not stop talking about planes ⚠",
+            "links": [
+                {"platform": "linkedin", "username": "sam-blewitt"},
+                {"platform": "github", "username": "wotanut"},
+                {"platform": "website", "username": "www.sambot.dev"}
+            ],
+            "type": "executive"
+        },
+        {
+            "name": "Michael Parker",
+            "role": "President",
+            "bio": "Computer Science | 2nd Year | He/Him | 6'4 with brilliant hair",
+            "links": [
+                {"platform": "linkedin", "username": "michaelrbparker"},
+                {"platform": "website", "username": "www.michaelrbparker.com/"},
+                {"platform": "email", "username": "michaelrbparker@protonmail.com"},
+                {"platform": "github", "username": "micfun123"}
+            ],
+            "type": "president"
+        }        
+    ]
+}
