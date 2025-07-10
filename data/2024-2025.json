@@ -13,10 +13,7 @@
             "name": "Anna Kennewell",
             "role": "Treasurer",
             "bio": "Computer Science | 2nd Year | She/Her Lover of hackathons, competitive coding and spreadsheets",
-            "links": [
-                {"platform": "linkedin", "username": "anna-k-431206333"},
-                {"platform": "github", "username": "AWell35"}
-            ],
+            "links": [],
             "type": "executive"
         },
         {
