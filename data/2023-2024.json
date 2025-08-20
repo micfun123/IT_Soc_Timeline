@@ -31,10 +31,12 @@
             "type": "executive"
         },
         {
-            "name": "Iris",
+            "name": "Iris Burdick",
             "role": "Kit Secretary",
-            "bio": "",
-            "links": [],
+            "bio": "Computer Networks and Security, She/Her",
+            "links": [
+                {"platform": "linkedin", "username": "irisburdick"}
+            ],
             "type": "executive"
         }
         
