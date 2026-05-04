@@ -6,7 +6,11 @@
             "name": "Oscar",
             "role": "President",
             "bio": "Computer Science, 3rd year, He/Him, Fedora User",
-            "links": [],
+            "links": [
+                {"platform": "github", "username": "sccreeper"},
+                {"platform": "linkedin", "username": "oscar-peace-a34495315"},
+                {"platform": "website", "username": "https://www.oscarcp.net/"}
+            ],
             "type": "president"
         },
         {
