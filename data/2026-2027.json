@@ -1,0 +1,28 @@
+{
+    "year": "2026-2027",
+    "current": true,
+    "members": [
+        {
+            "name": "Oscar",
+            "role": "President",
+            "bio": "Computer Science, 3rd year, He/Him, Fedora User",
+            "links": [],
+            "type": "president"
+        },
+        {
+            "name": "Anna Kennewell",
+            "role": "welfare",
+            "bio": "Computer Science | 3nd Year | She/Her Lover of hackathons, competitive coding and spreadsheets",
+            "links": [],
+            "type": "Welfare Officer"
+        },        {
+            "name": "Pete",
+            "role": "Secretary",
+            "bio": "Games Tech | 3rd Year",
+            "links": [
+                 {"platform": "github", "username": "PD-2272835"}
+            ],
+            "type": "executive"
+        }        
+    ]
+}
