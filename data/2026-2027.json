@@ -11,10 +11,10 @@
         },
         {
             "name": "Anna Kennewell",
-            "role": "welfare",
+            "role": "Welfare Officer",
             "bio": "Computer Science | 3nd Year | She/Her Lover of hackathons, competitive coding and spreadsheets",
             "links": [],
-            "type": "Welfare Officer"
+            "type": "welfare"
         },        {
             "name": "Pete",
             "role": "Secretary",
